@@ -1,4 +1,36 @@
+\section{Zielsetzung}
+Ziel der Versuch ist es die elastischen Konstanten eines Körpers (hier: einer Kugel) zu bestimmen. Anschließend soll das magnetische
+Moment eines Permanentmagneten unter Zuhilfenahme eines Helmholtzspulenpaares bestimmt werden.
 \section{Theorie}
 \label{sec:Theorie}
+    \subsection{Normal- und Schubspannung}
+    Wenn auf die Oberfläche eines Körpers eine Kraft $F$ wirkt, kann es dabei zu Verformungen und Volumenänderungen am Körper
+    kommen. Hier soll $F$ eine Zugkraft sein, das heißt eine Kraft die an der Oberfläche des Körpers \"zieht\". Diese Kraft wird
+    als Spannung bezeichnet, wobei die auf der Oberfläche senkrechtstehende Komponente als Normalspannung $\sigma$ bezeichnet wird
+    und die Komponente welche parallel zur Oberfläche verläuft als Schubspannung $\tau$.
+    Zu Beachten ist dabei aber auch, dass sich die an der Oberfläche wirkenden Kräfte auf den ganzen Körper auswirken.
+    Desweiteren wird eine Deformation als elastisch bezeichnet, wenn sich der Körper nach Einwirken einer Kraft wieder in seinen
+    ursprünglichen Zustand zurückversetzt, also seine ursprüngliche Form wieder annimmt. Dies gilt bei jedem Körper für einen 
+    gewissen Bereich des Zusammenhanges zwischen Kraft $F$ und Deformation (siehe \autoref{sec:hook}). Allgemein lässt sich dieser 
+    proportionale Zusammenhang mithilfe von Konstanten beschreiben. Auf die Definition und den Zusammenhang dieser Konstanten wird 
+    in \autoref{sec:konstanten} näher eingegangen.
+    \subsection{Hook'sches Gesetz}
+    \label{sec:hook}
+    TODO: Grafik zum Hook'schen Gesetz einfügen!!!!!!!!!!!!!!!!!!!
 
-\cite{sample}
+    Das Hook'sche Gesetz gilt solange der Körper nur einer geringen Spannung $\sigma$ ausgesetzt ist, so dass nur eine elatische 
+    Deformation vorliegt. In \autoref{fig:hook} wird dies als Hook'scher Bereich bezeichnet. Der Aufbau eines Körpers wird dabei
+    als Kristallgitter betrachtet, in dem sich die Atome beziehugsweise Moleküle in einem Abstand $r$ in einem erlektrostatischen
+    Gleichgewicht befinden. Durch Einwirkung einer äußeren Kraft verschiebt sich dieses Gleichgewicht und der Körper deformiert.
+    Solange die Spannungen nicht zu groß sind, ist diese Deformation reversibel, sodass sich ein proportionaler Zusammenhang zwischen
+    ergibt:
+    \begin{equation}
+    \label{eqn:hook}
+        \sigma = E \frac {\Delta L} {L},
+    \end{equation}     
+    wobei $\frac {\Delta L}{L}$ die relative Längenänderung der Körpers und E das Elastizitätsmodul, auf welches in \autoref{sec:konstanten}
+    näher eingegangen wird, bezeichnet.
+    Insgesamt sind für die Beschreibung des Zusammenhanges zwischen Spannung und Deformation in einem Kristallgitter 36 Konstanten
+    notwendig, durch Symmetrien veringert sich diese Zahl allerdings erheblich. 
+    \subsection{Elastische Konstanten isotroper Körper}
+    \label{sec:konstanten}
