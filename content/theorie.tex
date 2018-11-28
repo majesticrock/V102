@@ -34,3 +34,37 @@ Moment eines Permanentmagneten unter Zuhilfenahme eines Helmholtzspulenpaares be
     notwendig, durch Symmetrien veringert sich diese Zahl allerdings erheblich. 
     \subsection{Elastische Konstanten isotroper Körper}
     \label{sec:konstanten}
+    Als isotrope Materialien werden Stoffe bezeichnet, deren Elastizitätskonstanten richtungsunabhängig sind. Hierdurch verringert
+    sich die Zahl der Konstanten auf zwei. Ein solcher Körper wird auch bei der Messung verwendet.
+    Die Konstanten sind einerseits das Schub- beziehugsweise Torsionsmodul $G$, welches die Gestaltselastizität beschreibt, 
+    andererseit das Kompressionsmodul $Q$, welches die Volumenelastizität beschreibt. Hinzu kommen, aus Gründen der Zweckmäßigkeit
+    noch das bereits erwähnte Elastizitätsmodul $E$ und die Poisson'sche Querkontraktionszahl $\mu$.
+    $E$ beschreibt dabei die Längenänderung des Körpers unter Einfluss einer Normalspannung in Spannrichtung, während $\mu$ 
+    die Längenänderung der Körpers senkrecht zur Normalspannung beschreibt. Letztere ist als 
+    \begin{equation}
+    \label{eqn:mu}
+    \mu = - \frac{\Delta B}{B} \frac {L}{\Delta L}
+    \end{equation}
+    definiert. $\Delta B$ stellt dabei die Breitenänderung des Körpers da, was auch \autoref{fig:mu} verdeutlicht.
+    HIER MUSS NOCH NE VERDAMMTE GRAFIK HIN!!!!!
+    Weiterhin gelten folgende Zusammenhänge zwischen den Modulen:
+    \begin{equation}
+    \label{eqn:Zusammenhang1}
+    E = 2 G (\mu + 1)
+    \end{equation}
+    und
+    \begin{equation}
+    \label{eqn:Zusammenhang2}
+    E = 3 (1- 2 \mu) Q.
+    \end{equation}
+    Hieraus lassen sich die Module direkt berechnen, zu
+    \begin{equation}
+    \label{eqn:mubestimmen}
+    \mu = \frac{E}{2G} -1
+    \end{equation}
+    und 
+    \begin{equation}
+    \label{eqn:Qbestimmen}
+    Q = \frac{EG}{9G - 3E}
+    \end{equation}
+    
