@@ -1,2 +1,21 @@
 \section{Auswertung}
 \label{sec:Auswertung}
+
+\input{content/unified-magnet.tex}
+
+Die Werte in \autoref{tab:magnetfeld} werden nach \eqref{eqn:mittelwert} gemittelt. Somit entstehen die Werte in \autoref{tab:mittelwerte-magnet}.
+
+\input{content/mittelwerte-magnet.tex}
+
+Diese werden mittels Python 3.7.0 geplottet. Dabei wird $\frac{1}{T^2}$ gegen das B-Feld aufgetragen. Besagte Feldstärke berechnet sich bei Helmholtzspulen nach
+
+\begin{equation}
+    B_H = \bigg( \sqrt{\frac{4}{5}} \bigg)^3 \cdot \frac{\mu_0 N I}{R}
+\end{equation}
+
+\begin{figure}
+  \centering
+  \includegraphics{plot-magnet.pdf}
+  \caption{Plot und Fit der Mittelwerte der Periodendauern.}
+  \label{fig:plot_phase}
+\end{figure}
