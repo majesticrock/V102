@@ -62,5 +62,5 @@ def csv2textable(pathToFile, caption, label, format, delimiter=";"):
 
 
 
-f="mittelwerte-magnet"
-csv2textable("csv/"+f+".csv", "Gemittelte Periodendauer mit Magnetfeld.", f, "S[table-format=1.3]")
+f="draht"
+csv2textable("csv/"+f+".csv", "Eigenschaften des Drahtes.", f, "S[table-format=2.0] S[table-format=1.3]")

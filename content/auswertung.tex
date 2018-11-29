@@ -1,6 +1,28 @@
 \section{Auswertung}
 \label{sec:Auswertung}
+\subsection{Bestimmung des Schubmoduls $G$}
 
+Zur Berechnung des Schubmoduls $G$ werden diverse Daten benötigt. Zunächst wird die Periodendauer der Drehschwingung des Systems gemessen, diese sind in \autoref{tab:periodendauer} zu finden, und mithilfe von \eqref{eqn:mittelwert} gemittelt. Der Mittelwert beträgt
+\\ \\
+\centerline{$\overline{T} = (18.28210 \pm 0.00009)$ s.}
+\\ \\
+Die Daten für die Kugel und den Draht sind in \autoref{tab:kugel} und \autoref{tab:draht} zu finden.
+
+\input{content/kugel.tex}
+
+\input{content/draht.tex}
+%TODO: Gleichungsverweis
+Damit lässt sich nach GLEICHUNG das Schubmodul
+\\ \\
+\centerline{$G = (1.46 \pm 0.13) \cdot 10^11 \frac{\symup{N}}{\symup{m}^2}$}
+\\ \\
+Der Fehler ergibt sich nach \eqref{eqn:fehlerfortpflanzung}.
+
+\subsection{Bestimmung der Querkontraktionszahl $\mu$}
+
+
+
+\subsection{Mit eingeschaltetem Magnetfeld}
 \input{content/unified-magnet.tex}
 
 Die Werte in \autoref{tab:magnetfeld} werden nach \eqref{eqn:mittelwert} gemittelt. Somit entstehen die Werte in \autoref{tab:mittelwerte-magnet}.
@@ -10,12 +32,25 @@ Die Werte in \autoref{tab:magnetfeld} werden nach \eqref{eqn:mittelwert} gemitte
 Diese werden mittels Python 3.7.0 geplottet. Dabei wird $\frac{1}{T^2}$ gegen das B-Feld aufgetragen. Besagte Feldstärke berechnet sich bei Helmholtzspulen nach
 
 \begin{equation}
-    B_H = \bigg( \sqrt{\frac{4}{5}} \bigg)^3 \cdot \frac{\mu_0 N I}{R}
+    B_H = \bigg( \sqrt{\frac{4}{5}} \bigg)^3 \cdot \frac{\mu_0 N}{R}.
 \end{equation}
+
+Über die Messwerte wird ein linearer Fit der Form $\frac{1}{T^2} = aB + b$ gelegt, der sich nach \eqref{eqn:a} und \eqref{eqn:b} berechnet.
+Dieser ist in \autoref{fig:plot_magnet} zu sehen.
 
 \begin{figure}
   \centering
   \includegraphics{plot-magnet.pdf}
   \caption{Plot und Fit der Mittelwerte der Periodendauern.}
-  \label{fig:plot_phase}
+  \label{fig:plot_magnet}
 \end{figure}
+
+Mittels Python 3.7.0 werden die Werte als
+
+\centerline{$a = (10.76 \pm 0.06) \frac{1}{\symup{B} \cdot \symup{s}^2}$}
+
+und
+
+\centerline{$b = (0.0016 \pm 0.0002) \frac{1}{\symup{s}^2}$}
+
+bestimmt.
