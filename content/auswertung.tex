@@ -25,36 +25,35 @@ Der Fehler ergibt sich nach \eqref{eqn:fehlerfortpflanzung}.
 Die Querkontraktionszahl $\mu$ berechnet sich nach \eqref{eqn:mubestimmen}. Dazu wird zusätzlich der Wert für das Elastizitätsmodul 
 
 \centerline{$E = (21.00 \pm 0.05) \cdot 10^{10} \frac{\symup{N}}{\symup{m}^2}$}
-
 benötigt. Dieser wurde angegeben. Damit ergibt sich 
 
 \centerline{$\mu = -0.285 \pm 0.002$.}
-
 Das Kompressionsmodul $Q$ kann mit \eqref{eqn:Qbestimmen} berechnet werden und ist somit
 \\ \\
-\centerline{$Q = (4.56 \pm 0.02) \cdot 10^{10} \frac{\symup{N}}{\symup{m}^2}$}
+\centerline{$Q = (4.56 \pm 0.02) \cdot 10^{10} \frac{\symup{N}}{\symup{m}^2}$.}
 \\ \\
 Zur Berechnung des Fehlers wird in beiden Fällen \eqref{eqn:fehlerfortpflanzung} verwendet.
 
 
 \subsection{Bestimmung des magnetischen Momentes}
+
 \input{content/unified-magnet.tex}
 
 Die Werte in \autoref{tab:magnetfeld} werden nach \eqref{eqn:mittelwert} gemittelt. Somit entstehen die Werte in \autoref{tab:mittelwerte-magnet}.
 
 \input{content/mittelwerte-magnet.tex}
 
-Diese werden mittels Python 3.7.0 geplottet. Dabei wird $\frac{1}{T^2}$ gegen das B-Feld aufgetragen. Besagte Feldstärke berechnet sich bei Helmholtzspulen nach
-
-\begin{equation}
-    B_H = \bigg( \sqrt{\frac{4}{5}} \bigg)^3 \cdot \frac{\mu_0 N}{R}.
-\end{equation}
-
 %TODO: Gleichungsreferenz
 GLEICHUNG kann umgeformt werden zu
 
 \begin{equation}
   mB + D = \frac{4 \pi^2 \theta}{T^2} := \Gamma
+\end{equation}
+
+Die gemittelten Werte werden mittels Python 3.7.0 geplottet. Dabei wird $\Gamma$ gegen $B$ aufgetragen. Die besagte Feldstärke berechnet sich bei Helmholtzspulen nach
+
+\begin{equation}
+    B_H = \bigg( \sqrt{\frac{4}{5}} \bigg)^3 \cdot \frac{\mu_0 N}{R}.
 \end{equation}
 
 %TODO: Gleichungsreferenz
@@ -85,3 +84,4 @@ und
 \centerline{$D = (10 \pm 1) \cdot 10^{-6} \frac{\symup{kg} \symup{m}^2}{\symup{s}^2}$}
 
 bestimmt.
+Dabei ist $m$ das magnetische Moment.
