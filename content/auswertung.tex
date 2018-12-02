@@ -13,8 +13,8 @@ Die Daten für die Kugel und den Draht sind in \autoref{tab:kugel} und \autoref{
 \input{content/kugel.tex}
 
 \input{content/draht.tex}
-%TODO: Gleichungsverweis
-Damit lässt sich nach GLEICHUNG das Schubmodul
+
+Damit lässt sich nach \eqref{eqn:schubmodul} das Schubmodul
 \\ \\
 \centerline{$G = (1.4675 \pm 0.0012) \cdot 10^{11} \frac{\symup{N}}{\symup{m}^2}$}
 \\ \\
@@ -43,8 +43,7 @@ Die Werte in \autoref{tab:magnetfeld} werden nach \eqref{eqn:mittelwert} gemitte
 
 \input{content/mittelwerte-magnet.tex}
 
-%TODO: Gleichungsreferenz
-GLEICHUNG kann umgeformt werden zu
+\eqref{eqn:Periodendauermagnet} kann umgeformt werden zu
 
 \begin{equation}
   mB + D = \frac{4 \pi^2 \theta}{T^2} := \Gamma
@@ -56,8 +55,7 @@ Die gemittelten Werte werden mittels Python 3.7.0 geplottet. Dabei wird $\Gamma$
     B_H = \bigg( \sqrt{\frac{4}{5}} \bigg)^3 \cdot \frac{\mu_0 N}{R}.
 \end{equation}
 
-%TODO: Gleichungsreferenz
-Zur Berechnung von $\theta$ wird das Trägheitsmoment der Kugel $\theta_K$, das sich nach GLEICHUNG berechnet, mit dem gegebenen Trägheitsmoment $\theta_H$ der Halterung addiert.
+Zur Berechnung von $\theta$ wird das Trägheitsmoment der Kugel $\theta_K$, das sich nach \eqref{eqn:traegheit} berechnet, mit dem gegebenen Trägheitsmoment $\theta_H$ der Halterung addiert.
 \\ \\
 \centerline{$\theta_H = 22.5 \cdot 10^{-7} \symup{kg} \symup{m}^2$}
 
