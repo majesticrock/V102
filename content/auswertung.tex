@@ -73,7 +73,7 @@ Der Fehler $\Delta Q$ ergibt sich dabei nach Gauß zu
 
 \input{content/unified-magnet.tex}
 
-Die Werte in \autoref{tab:magnetfeld} werden zur Veranschaulichung in einem Plot aufgetragen. Die Werte werden hier mittels linearer Regression mit einem Graphen der Form $\frac{1}{T^2} = aB_H + b$ angenähert.
+Die Werte in \autoref{tab:magnetfeld} werden zur Veranschaulichung in einem Plot aufgetragen. Die Werte werden hier mittels linearer Regression mit einem Graphen der Form $\frac{1}{T_m^2} = aB_H + b$ angenähert.
 Dabei ist $B_H$ die magnetische Feldstärke in der Mitte der Helmholtzspule. Diese berechnet sich nach
 
 \begin{equation}
@@ -88,6 +88,24 @@ Dieser Plot ist in \autoref{fig:plot_magnet} zu sehen.
   \caption{Plot und Fit der Periodendauern.}
   \label{fig:plot_magnet}
 \end{figure}
+
+Dabei errechnen sich die Variablen wie folgt:
+
+\vspace{.5em}
+\centerline{$a = \frac{\sum_{i=1}^{100} \Big(B_{H,i} - \overline{B_H}\Big) \Big(\frac{1}{T_m^2}_i - \overline{\frac{1}{T_m^2}}\Big)}{\sum_{i=1}^{100} \Big(B_{H,i} - \overline{B_H}\Big)^2}$}
+\vspace{1em}
+\centerline{$b = \overline{\frac{1}{T_m^2}} - a \cdot \overline{B_H}$}
+\vspace{.5em}
+
+Dabei gilt
+
+\vspace{.5em}
+\centerline{$\overline{\frac{1}{T_m^2}} = \frac{1}{100} \sum_{i=1}^{100} \frac{1}{T_{m,i}^2}$}
+
+und
+
+\centerline{$\overline{B_H} = \frac{1}{100} \sum_{i=1}^{100} B_{H,i}$.}
+\vspace{.5em}
 
 Mittels Python 3.7.0 werden die Variablen als
 
@@ -110,8 +128,39 @@ Der zugehörige Fehler nach Gauß ergibt sich zu
   \Delta \theta = \frac{2}{5} \sqrt{ \bigg( R_K^2 \cdot \Delta m_K \bigg)^2 + \bigg( 2m_K R_K \cdot \Delta R_K \bigg)^2 } = 0.001 \cdot 10^{-4} \symup{kg} \symup{m}^2.
 \end{equation}
 
+Der angegebene Wert für das Trägheitsmoment der Halterung ist
+
+\vspace{.5em}
+\centerline{$\theta_H = 22.5 \cdot 10^{-7}$ kgm².}
+\vspace{.5em}
+
 Also ist
 
 \vspace{.5em}
 \centerline{$\theta = (1.555 \pm 0.001) \cdot 10^{-4}$ kgm².}
+\vspace{.5em}
+
+Mit Verhältnis für $T_m$ und $m$ in \eqref{eqn:Periodendauermagnet} folgt direkt
+
+\begin{equation}
+  aB + b = \frac{mB_H}{4 \pi^2 \theta} + \frac{D}{4 \pi^2 \theta}.
+\end{equation}
+
+Dieses Verhätlnis muss für alle $B_H$ gelten, da das magnetische Moment $m$ des Permanentmangneten nicht von dem äußeren Magnetfeld abhängt.
+Damit muss
+
+\begin{equation}
+  m = 4 \pi^2 \theta a
+\end{equation}
+
+gelten. Der Fehler nach Gauß berechnet sich zu
+
+\vspace{.5em}
+\centerline{$\Delta m = 4 \pi^2 \sqrt{ \bigg( \theta \cdot \Delta a \bigg)^2 + \bigg( a \cdot \Delta \theta \bigg)^2 } = 6 \cdot 10^{-5}$ Am².}
+\vspace{.5em}
+
+Somit ergibt sich
+
+\vspace{.5em}
+\centerline{$m = (2.11 \pm 0.06) \cdot 10^{-3}$ Am².}
 \vspace{.5em}
