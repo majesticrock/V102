@@ -107,6 +107,27 @@ und
 \centerline{$\overline{B_H} = \frac{1}{100} \sum_{i=1}^{100} B_{H,i}$.}
 \vspace{.5em}
 
+Zur Fehlerrechnung wird
+
+\vspace{.5em}
+\centerline{$\sigma = \sqrt{\frac{1}{100 - 2} \sum_{i=1}^{100} \Big( \frac{1}{T_m^2} - (a B_{H, i} + b) \Big)^2}$ }
+\vspace{.5em}
+
+definiert. Dies ist die Abweichung der Messwerte von der durch $a$ und $b$ parametrisierten Ausgleichsgerade. Damit kann der Fehler für $a$ als
+
+\vspace{.5em}
+\centerline{$\Delta a = \sigma \cdot \sqrt{ \frac{1}{\sum_{i=1}^{100} \Big( \frac{1}{T_m^2} - \overline{\frac{1}{T_m^2}} \Big)^2 } } $}
+\vspace{.5em}
+
+und der Fehler für $b$ als 
+
+\vspace{.5em}
+\centerline{$\Delta b = \sigma \cdot \sqrt{ \frac{\sum_{i=1}^{100} \Big( \frac{1}{T_m^2} \Big)^2 }{ 100 \cdot \sum_{i=1}^{100} \Big( \frac{1}{T_m^2} - \overline{\frac{1}{T_m^2}} \Big)^2 } }$ .}
+\vspace{.5em}
+
+geschrieben werden \cite[14]{fehlerrechnung}.
+%https://www.physnet.uni-hamburg.de/TUHH/Versuchsanleitung/Fehlerrechnung.pdf
+
 Mittels Python 3.7.0 werden die Variablen als
 
 \vspace{.5em}
