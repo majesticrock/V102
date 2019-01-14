@@ -23,9 +23,12 @@ Damit berechnet sich die gemittelte Periodendauer zu
 \\ \\
 \centerline{$\overline{T} = (18.28210 \pm 0.00009)$ s.}
 \\ \\
-Die Daten für die Kugel und den Draht werden an der Apperatur abgelesen und sind in \autoref{tab:kugel} und \autoref{tab:draht} zu finden.
+Die Daten für die Kugel werden an der Apperatur abgelesen und sind in \autoref{tab:kugel} zu finden.
 
 \input{content/kugel.tex}
+
+Die Länge des Drahtes wird gemessen und beträgt $L = 0.85$m. Der Radius wird an zehn verschiedenen Stellen gemessen. Diese Werte in \autoref{tab:draht} zu finden.
+Da die Werte bei jeder Messung dieselben sind, ist der gemittelte Wert von $R = 85$µm als fehlerfrei zu betrachten.
 
 \input{content/draht.tex}
 
@@ -33,7 +36,7 @@ Damit lässt sich nach \eqref{eqn:schubmodul} das Schubmodul
 \\ \\
 \centerline{$G = (1.4675 \pm 0.0012) \cdot 10^{11} \frac{\symup{N}}{\symup{m}^2}$}
 \\ \\
-bestimmen. Der Fehler ergibt sich nach dabei nach Gauß zu
+bestimmen. Der Fehler ergibt sich dabei nach Gauß zu
 
 \begin{equation}
  \Delta G = \frac{16 \pi L}{5 R^4} \cdot \sqrt{ \bigg( \frac{2 m_K R_K^2}{\overline{T}^3} \cdot \Delta \overline{T} \bigg)^2 + \bigg( \frac{2 m_k R_k^2}{\overline{T}^2} \cdot \Delta R_K \bigg)^2 + \bigg( \frac{R_K^2}{\overline{T}^2} \cdot \Delta m_K \bigg)^2} = 1.2 \cdot 10^{8} \frac{\symup{N}}{\symup{m}^2}
@@ -50,7 +53,7 @@ Die Querkontraktionszahl $\mu$ berechnet sich nach \eqref{eqn:mubestimmen}. Der 
 Dazu wird zusätzlich der Wert für das Elastizitätsmodul 
 
 \vspace{.5em}
-\centerline{$E \pm \Delta E = (21.00 \pm 0.05) \cdot 10^{10} \frac{\symup{N}}{\symup{m}^2}$}
+\centerline{$E = (21.00 \pm 0.05) \cdot 10^{10} \frac{\symup{N}}{\symup{m}^2}$}
 \vspace{.5em}
 
 benötigt. Dieser und dessen zugehöriger Fehler wurden angegeben. Damit ergibt sich 
@@ -89,45 +92,6 @@ Dieser Plot ist in \autoref{fig:plot_magnet} zu sehen.
   \label{fig:plot_magnet}
 \end{figure}
 
-Dabei errechnen sich die Variablen wie folgt:
-
-\vspace{.5em}
-\centerline{$a = \frac{\sum_{i=1}^{100} \Big(B_{H,i} - \overline{B_H}\Big) \Big(\frac{1}{T_m^2}_i - \overline{\frac{1}{T_m^2}}\Big)}{\sum_{i=1}^{100} \Big(B_{H,i} - \overline{B_H}\Big)^2}$}
-\vspace{1em}
-\centerline{$b = \overline{\frac{1}{T_m^2}} - a \cdot \overline{B_H}$}
-\vspace{.5em}
-
-Dabei gilt
-
-\vspace{.5em}
-\centerline{$\overline{\frac{1}{T_m^2}} = \frac{1}{100} \sum_{i=1}^{100} \frac{1}{T_{m,i}^2}$}
-
-und
-
-\centerline{$\overline{B_H} = \frac{1}{100} \sum_{i=1}^{100} B_{H,i}$.}
-\vspace{.5em}
-
-Zur Fehlerrechnung wird
-
-\vspace{.5em}
-\centerline{$\sigma = \sqrt{\frac{1}{100 - 2} \sum_{i=1}^{100} \Big( \frac{1}{T_m^2} - (a B_{H, i} + b) \Big)^2}$ }
-\vspace{.5em}
-
-definiert. Dies ist die Abweichung der Messwerte von der durch $a$ und $b$ parametrisierten Ausgleichsgerade. Damit kann der Fehler für $a$ als
-
-\vspace{.5em}
-\centerline{$\Delta a = \sigma \cdot \sqrt{ \frac{1}{\sum_{i=1}^{100} \Big( \frac{1}{T_m^2} - \overline{\frac{1}{T_m^2}} \Big)^2 } } $}
-\vspace{.5em}
-
-und der Fehler für $b$ als 
-
-\vspace{.5em}
-\centerline{$\Delta b = \sigma \cdot \sqrt{ \frac{\sum_{i=1}^{100} \Big( \frac{1}{T_m^2} \Big)^2 }{ 100 \cdot \sum_{i=1}^{100} \Big( \frac{1}{T_m^2} - \overline{\frac{1}{T_m^2}} \Big)^2 } }$ .}
-\vspace{.5em}
-
-geschrieben werden \cite[14]{fehlerrechnung}.
-%https://www.physnet.uni-hamburg.de/TUHH/Versuchsanleitung/Fehlerrechnung.pdf
-
 Mittels Python 3.7.0 werden die Variablen als
 
 \vspace{.5em}
@@ -136,7 +100,14 @@ Mittels Python 3.7.0 werden die Variablen als
 \centerline{$b = (1.63 \pm 0.08) \cdot 10^{-3}$ $\frac{1}{\symup{s}^2}$}
 \vspace{.5em}
 
-bestimmt. Das Gesamtträgheitsmoment $\theta$ ergibt sich nach Addition der Trägheitsmomente der Kugel $\theta_K$, welches sich nach \eqref{eqn:traegheit} berechnet, und des Trägheitsmomentes der Halterung $\theta_H$, welches an der Apperatur abgelesen wird.
+bestimmt. Des Weiteren folgt dem Verhältnis für $T_m$ und $m$ in \eqref{eqn:Periodendauermagnet} direkt
+
+\begin{equation}
+\label{eqn:verhalt}
+  aB + b = \frac{mB_H}{4 \pi^2 \theta} + \frac{D}{4 \pi^2 \theta}.
+\end{equation}
+
+Das Gesamtträgheitsmoment $\theta$ ergibt sich nach Addition der Trägheitsmomente der Kugel $\theta_K$, welches sich nach \eqref{eqn:traegheit} berechnet, und des Trägheitsmomentes der Halterung $\theta_H$, welches an der Apperatur abgelesen wird.
 Damit folgt der Zusammenhang
 
 \begin{equation}
@@ -161,13 +132,7 @@ Also ist
 \centerline{$\theta = (1.555 \pm 0.001) \cdot 10^{-4}$ kgm².}
 \vspace{.5em}
 
-Mit dem Verhältnis für $T_m$ und $m$ in \eqref{eqn:Periodendauermagnet} folgt direkt
-
-\begin{equation}
-  aB + b = \frac{mB_H}{4 \pi^2 \theta} + \frac{D}{4 \pi^2 \theta}.
-\end{equation}
-
-Dieses Verhätlnis muss für alle $B_H$ gelten, da das magnetische Moment $m$ des Permanentmangneten nicht von dem äußeren Magnetfeld abhängt.
+Das Verhältnis in \eqref{eqn:verhalt} muss für alle $B_H$ gelten, da das magnetische Moment $m$ des Permanentmangneten nicht von dem äußeren Magnetfeld abhängt.
 Damit muss
 
 \begin{equation}
